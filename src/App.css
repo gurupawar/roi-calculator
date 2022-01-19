@@ -9,6 +9,17 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.title {
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+.title.gray {
+  color: rgb(156, 156, 156);
+}
+.title.right {
+  text-align: right;
+  color: rgb(156, 156, 156);
+}
 .container {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -137,6 +148,7 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
+  margin-top: 5px;
 }
 .default__value__conversion .default-value > span {
   background: rgba(238, 238, 238, 0.541);
@@ -145,6 +157,7 @@ input:checked + .slider:before {
   border-radius: 7px;
   font-size: 12px;
   color: #000;
+  cursor: pointer;
 }
 .default-value > span + span {
   margin-left: 10px;
@@ -155,12 +168,72 @@ input:checked + .slider:before {
   text-transform: uppercase;
 }
 
-/* ==================================================== Time Frame */
+/* ==================================================== Time Frame and Select Tier BG */
 .timeFrame {
   margin-top: 1.5rem;
 }
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.time > span {
+  border-radius: 100px;
+  padding: 6px 1.3rem;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(238, 238, 238, 0.541);
+  border: 1px solid rgba(238, 238, 238, 0.541);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.time > span.time-selected {
+  background: #f9eb85;
+  border: 1px solid #e9d0128f;
+}
+/* -------------------------------------------------- Apy toggel */
+.apy__toggle {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.apy__toggle span {
+  font-weight: bold;
+  font-size: 15px;
+}
+/* -------------------------------------------------- Select tier */
 .timeFrame h4 {
   font-size: 14px;
+  margin-bottom: 1rem;
+}
+/* -------------------------------------------------- Current Rates */
+.current__rate {
+  display: flex;
+  flex-direction: column;
+}
+.current__rate-result {
+  width: 100%;
+  background: rgba(238, 238, 238, 0.541);
+  padding: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.055);
+  border-radius: 7px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  text-align: right;
+}
+.conversion {
+  font-size: 12px;
+  color: gray;
+  text-transform: uppercase;
+  align-self: flex-end;
+  margin-top: 5px;
 }
 /* -------------------------------------------------- Screen Size */
 @media (min-width: 576px) {
