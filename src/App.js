@@ -1,7 +1,15 @@
 import "./App.css";
 import cake from "./assets/cake-logo.svg";
 import InputBox from "./components/InputBox";
+import DownArrow from "./assets/chevron-down-regular-24.png";
+import { useState } from "react";
+
 function App() {
+  const [show, setShow] = useState(false);
+
+  const HandleClick = () => {
+    console.log("clickd");
+  };
   return (
     <div className="App">
       <div className="container">
@@ -12,9 +20,9 @@ function App() {
               <img src={cake} alt="" />
               cake
             </label>
-            <label class="switch">
+            <label className="switch">
               <input type="checkbox" />
-              <span class="slider round checked"></span>
+              <span className="slider round checked"></span>
             </label>
             <label>usd</label>
           </div>
@@ -68,6 +76,31 @@ function App() {
             <h4 className="title right">ROI at Current Rates</h4>
             <p className="current__rate-result">0.00 USD</p>
             <span className="conversion">~ 0.000 CAKE + 0.000000 DON</span>
+          </div>
+
+          <div className="hide__details">
+            <button onClick={() => setShow(!show)}>
+              Show Details <img src={DownArrow} alt="" />
+            </button>
+            {show ? (
+              <div className="hide__show">
+                <div className="details__header">
+                  <span>APY</span>
+                  <span className="apy-percentage">9.0%</span>
+                </div>
+                <div className="bulletPoints">
+                  <ul>
+                    <li>Calculated based on current rates</li>
+                    <li>
+                      All figures are estimates provided for your convenience
+                      only, and by no means represent guaranteed returns.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
       </div>
