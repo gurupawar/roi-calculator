@@ -6,10 +6,6 @@ import { useState } from "react";
 
 function App() {
   const [show, setShow] = useState(false);
-
-  const HandleClick = () => {
-    console.log("clickd");
-  };
   return (
     <div className="App">
       <div className="container">
